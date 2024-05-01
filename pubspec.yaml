@@ -1,0 +1,436 @@
+name: helwan_store
+description: A new Flutter project.
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.2 <4.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  image_picker: ^1.0.7
+  shared_preferences: ^2.2.2
+  get: ^4.6.6
+  scoped_model: ^2.0.0
+  http: ^1.1.0
+
+  # image carousel slider
+  carousel_slider: ^4.2.1
+  # dots indicator
+  smooth_page_indicator: ^1.1.0
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.2
+  rename: ^3.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/launcher.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^2.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  assets:
+    - assets/launcher.png
+    - assets/person.png
+    - assets/logo.png
+    - assets/Ads/Educational_guide.jpg
+    - assets/Ads/Medical_evidence.jpg
+    - assets/Ads/Restaurant_guide.jpg
+    - assets/Ads/Stores_directory.jpg
+    - assets/guide/food/RestaurantsCafesImages/grilled.jpg
+    - assets/guide/food/RestaurantsCafesImages/seafood.jpg
+    - assets/guide/food/RestaurantsCafesImages/fast_food.jpg
+    - assets/guide/food/RestaurantsCafesImages/dessert.jpg
+    - assets/guide/food/RestaurantsCafesImages/pies_pizza.jpg
+    - assets/guide/food/RestaurantsCafesImages/popular_foods.jpg
+    - assets/guide/food/RestaurantsCafesImages/coffee_shops.jpg
+    - assets/guide/food/grilled/abo_ammar.png
+    - assets/guide/food/grilled/abo_fahma.jpg
+    - assets/guide/food/grilled/abo_shora.png 
+    - assets/guide/food/grilled/elmlok.png
+    - assets/guide/food/grilled/haty_gaber.jpg 
+    - assets/guide/food/grilled/sharowe.png
+    - assets/guide/food/grilled/stElBet.png
+
+    - assets/guide/food/Seafood/alhosm.png
+    - assets/guide/food/Seafood/asmak_helwan.png
+    - assets/guide/food/Seafood/el_madena.png
+    - assets/guide/food/Seafood/elMadina.png
+    - assets/guide/food/Seafood/elsharqawii.png
+    - assets/guide/food/Seafood/tata.png
+    - assets/guide/food/Seafood/waly_elsham.png
+    
+    - assets/guide/food/fastFood/bazokaa.png
+    - assets/guide/food/fastFood/heart_attack.png
+    - assets/guide/food/fastFood/syrian_house.png
+    - assets/guide/food/fastFood/wali_elsham.jpg
+    - assets/guide/food/fastFood/zaks.jpg
+    - assets/guide/food/desert/bedamore.png
+    - assets/guide/food/desert/blaban.png
+    - assets/guide/food/desert/el_mesawi.png
+    - assets/guide/food/desert/golden_bread.png
+    - assets/guide/food/desert/karamel.png
+    - assets/guide/food/desert/shahen.png
+    - assets/guide/food/Pies_Pizza/ageen.png
+    - assets/guide/food/Pies_Pizza/el_shek_wael.jpg
+    - assets/guide/food/Pies_Pizza/elhoria.jpg
+    - assets/guide/food/Pies_Pizza/tres_bon.jpg
+
+    - assets/guide/food/popular_Foods/fool.jpeg
+    - assets/guide/food/popular_Foods/Koushari.jpeg
+    - assets/guide/food/popular_Foods/Liver.jpeg
+    - assets/guide/food/popular_Foods/Koushari_Sections/abo_rgel.jpg
+    # - assets/guide/food/popular_Foods/Koushari_Sections/el_gobashe.jpg
+    # - assets/guide/food/popular_Foods/Koushari_Sections/el_moktar.jpg
+    # - assets/guide/food/popular_Foods/Koushari_Sections/fouda.jpg
+    # - assets/guide/food/popular_Foods/Liver_Sections/abo_assem.jpg
+    # - assets/guide/food/popular_Foods/Liver_Sections/brns.jpg
+    - assets/guide/food/popular_Foods/Liver_Sections/ELMAHDII.jpg
+    # - assets/guide/food/popular_Foods/Liver_Sections/kibdakia.JPG
+    # - assets/guide/food/popular_Foods/Liver_Sections/mlk.jpg
+    # - assets/guide/food/popular_Foods/Liver_Sections/zico.jpg
+    # - assets/guide/food/popular_Foods/foll_and_Tamiya_Sections/alwahaty.jpg
+    # - assets/guide/food/popular_Foods/foll_and_Tamiya_Sections/am_bashandy.jpg
+    - assets/guide/food/popular_Foods/foll_and_Tamiya_Sections/elmostafa.jpg
+    # - assets/guide/food/popular_Foods/foll_and_Tamiya_Sections/elshe5.jpg
+    # - assets/guide/food/popular_Foods/foll_and_Tamiya_Sections/nema.jpg
+    - assets/guide/food/cafes/abd_elmabod.png
+    - assets/guide/food/cafes/antequ.png
+    - assets/guide/food/cafes/el2ady.png
+    - assets/guide/food/cafes/el3amed.png
+    - assets/guide/food/cafes/elfara3na.png
+    - assets/guide/food/cafes/elgarabawii.png
+    - assets/guide/food/cafes/elgona.png
+    - assets/guide/food/cafes/elyamaniii.png
+    - assets/guide/food/cafes/kef.png
+    - assets/guide/food/cafes/lava.png
+    - assets/guide/food/cafes/lavill.png
+    - assets/guide/food/cafes/prazili.png
+    - assets/guide/food/cafes/rento.png
+    - assets/guide/food/cafes/smile.png
+    - assets/guide/food/cafes/vinesint.png
+    - assets/guide/food/cafes/wadi_elmlok.png
+    - assets/guide/food/cafes/molana.png
+    - assets/guide/health/clinic/clinic.jpg
+    - assets/guide/health/hospital/hospital.jpg
+    - assets/guide/health/Laboratories_x-rays/lab.jpg
+    - assets/guide/health/pharmacies/pharmacie.jpg
+
+    - assets/guide/health/clinic/anf/anf.jpg
+    - assets/guide/health/clinic/batna/batna.jpg
+    - assets/guide/health/clinic/beauty/beauty.jpg
+    - assets/guide/health/clinic/child/child.jpg
+    - assets/guide/health/clinic/eye/eye.jpg
+    - assets/guide/health/clinic/graha/graha.jpg
+    - assets/guide/health/clinic/heart/heart.jpg
+    - assets/guide/health/clinic/mokh/mokh.jpg
+    - assets/guide/health/clinic/skin/skin.jpg
+    - assets/guide/health/clinic/teeth/teeth.jpg
+    - assets/guide/health/clinic/women/women.jpg
+    - assets/guide/health/clinic/skin/skin.jpg
+    - assets/guide/health/clinic/physicalـtherapy/physicalـtherapy.png
+    - assets/guide/health/clinic/bone/bone.png
+    - assets/guide/health/clinic/chest/chest.png
+    - assets/guide/health/clinic/psychiatrist/psychiatrist.png
+    - assets/guide/health/clinic/Kidneys/Kidneys.png
+
+
+    - assets/guide/health/clinic/teeth/01.png
+    - assets/guide/health/clinic/teeth/02.png
+    - assets/guide/health/clinic/teeth/03.png
+    - assets/guide/health/clinic/teeth/04.png
+    - assets/guide/health/clinic/teeth/05.png
+
+    - assets/guide/health/clinic/beauty/1.png
+    - assets/guide/health/clinic/beauty/2.png
+    - assets/guide/health/clinic/beauty/3.png
+    - assets/guide/health/clinic/beauty/4.png
+    - assets/guide/health/clinic/beauty/5.png
+    - assets/guide/health/clinic/beauty/6.png
+
+    - assets/guide/health/clinic/women/ahmed-abdelalem.png
+    - assets/guide/health/clinic/women/motaz-elhelw.png
+    - assets/guide/health/clinic/women/noua.png
+    - assets/guide/health/clinic/women/aber.png
+    - assets/guide/health/clinic/women/el_aksa.png
+    - assets/guide/health/clinic/women/osma-fayd.png
+
+    - assets/guide/health/clinic/graha/magdi-saad.png
+    - assets/guide/health/clinic/graha/mahmod-elmsare.png
+    - assets/guide/health/clinic/graha/mahmod-radwan.png
+    - assets/guide/health/clinic/graha/mostfa_mahmoud.png
+    - assets/guide/health/clinic/graha/esmat_el_gabre.png
+    - assets/guide/health/clinic/graha/maged.png
+   
+    - assets/guide/health/clinic/batna/ahmed-kandel.png
+    - assets/guide/health/clinic/batna/harbi.png
+    - assets/guide/health/clinic/batna/hesham.png
+    - assets/guide/health/clinic/batna/mahr.png
+    - assets/guide/health/clinic/batna/shaymaa.png
+    - assets/guide/health/clinic/batna/yossf.png
+    - assets/guide/health/clinic/batna/ahmed_abo_shady.png
+    - assets/guide/health/clinic/batna/esmat.png
+    - assets/guide/health/clinic/batna/amer_rafet.png
+
+    - assets/guide/health/clinic/child/ali.png
+    - assets/guide/health/clinic/child/ashraf.png
+    - assets/guide/health/clinic/child/elnada.png
+    - assets/guide/health/clinic/child/sara_hosne.png
+    - assets/guide/health/clinic/child/mohamed_ahmed.png
+
+    - assets/guide/health/clinic/anf/tamer.png
+    - assets/guide/health/clinic/anf/ahmed_elsalmawy.png
+    - assets/guide/health/clinic/anf/esmael_mohamed.png
+    - assets/guide/health/clinic/anf/botros.png
+    - assets/guide/health/clinic/anf/ramadan.png
+    - assets/guide/health/clinic/anf/samy_mohamed.png
+    - assets/guide/health/clinic/anf/saheb.png
+    - assets/guide/health/clinic/anf/atef.png
+    - assets/guide/health/clinic/anf/abedelrahman.png
+    - assets/guide/health/clinic/anf/mohsen.png
+    - assets/guide/health/clinic/anf/mrkos.png
+    - assets/guide/health/clinic/anf/moner.png
+    - assets/guide/health/clinic/anf/waled.png
+
+    - assets/guide/health/clinic/skin/ahmed_faouze.png
+    - assets/guide/health/clinic/skin/eslam_mohamed.png
+    - assets/guide/health/clinic/skin/alefa.png
+    - assets/guide/health/clinic/skin/sara.png
+    - assets/guide/health/clinic/skin/amer.png
+    - assets/guide/health/clinic/skin/awad.png
+    - assets/guide/health/clinic/skin/mohamed_abd_elazez.png
+    - assets/guide/health/clinic/skin/eshrak.png
+    - assets/guide/health/clinic/skin/naem.png
+    - assets/guide/health/clinic/skin/hane.png
+    - assets/guide/health/clinic/skin/hoda.png
+
+    - assets/guide/health/clinic/eye/tarek-araf.png
+    - assets/guide/health/clinic/eye/ahmed_elfar.png
+    - assets/guide/health/clinic/eye/ahmed_nady.png
+    - assets/guide/health/clinic/eye/mohamed_rabea.png
+    - assets/guide/health/clinic/eye/hasen_helme.png
+    - assets/guide/health/clinic/eye/mohamed_abd_elrzak.png
+    - assets/guide/health/clinic/eye/eonan.png
+
+    - assets/guide/health/clinic/mokh/ahmed_el_gaty.png
+    - assets/guide/health/clinic/mokh/ahmed_mohamed.png
+    - assets/guide/health/clinic/mokh/shref_madboly.png
+    - assets/guide/health/clinic/mokh/salah_fathe.png
+    - assets/guide/health/clinic/mokh/amer_sleman.png
+
+    - assets/guide/health/clinic/heart/ahmed_el_gende.png
+    - assets/guide/health/clinic/heart/ahmed_gafer.png
+    - assets/guide/health/clinic/heart/ahmed_salah.png
+    - assets/guide/health/clinic/heart/ahmed_nageb.png
+    - assets/guide/health/clinic/heart/mohamed_saed.png
+    - assets/guide/health/clinic/heart/mohamed_fouad.png
+    - assets/guide/health/clinic/heart/mahmoud_radwan.png
+    - assets/guide/health/clinic/heart/easer_ahmed.png
+
+    - assets/guide/health/clinic/bone/ahmed_mostafa.png
+    - assets/guide/health/clinic/bone/ehab.png
+    - assets/guide/health/clinic/bone/baseune.png
+    - assets/guide/health/clinic/bone/deaa_mohamed.png
+    - assets/guide/health/clinic/bone/maged_fared.png
+    - assets/guide/health/clinic/bone/mohamed_elsbae.png
+    - assets/guide/health/clinic/bone/mohamed_abdl_raof.png
+    - assets/guide/health/clinic/bone/mahmoud_abdl_baset.png
+    - assets/guide/health/clinic/bone/el_helal.png
+    - assets/guide/health/clinic/bone/mostfa_shokry.png
+    - assets/guide/health/clinic/bone/waled_shaban.png
+
+    # - assets/guide/health/clinic/chest/
+    # - assets/guide/health/clinic/chest/
+    # - assets/guide/health/clinic/chest/
+
+
+    - assets/guide/health/clinic/kidneys/ahmed_mohamed.png
+    - assets/guide/health/clinic/kidneys/ahmed_abo_elazm.png
+    - assets/guide/health/clinic/kidneys/ahmed_helme.png
+    - assets/guide/health/clinic/kidneys/ramez_reda.png
+    - assets/guide/health/clinic/kidneys/mohamed_elsaed.png
+
+    - assets/guide/health/clinic/physicalـtherapy/Egyptian-physical-Therapy-center.png
+    - assets/guide/health/clinic/physicalـtherapy/maka.png
+    - assets/guide/health/clinic/physicalـtherapy/el_salam.png
+
+    - assets/guide/health/pharmacies/elazaby.png
+    - assets/guide/health/pharmacies/kayan.png
+    - assets/guide/health/pharmacies/misr.png
+    - assets/guide/health/pharmacies/sef.png
+    - assets/guide/health/pharmacies/yasin.png
+
+    - assets/guide/health/Laboratories_x-rays/Alfa-Labs.png
+    - assets/guide/health/Laboratories_x-rays/el_borg.png
+    - assets/guide/health/Laboratories_x-rays/el_sharka.png
+    - assets/guide/health/Laboratories_x-rays/kelobatra.png
+    - assets/guide/health/Laboratories_x-rays/masr.png
+    - assets/guide/health/Laboratories_x-rays/moktaber.png
+    - assets/guide/health/Laboratories_x-rays/nail.png
+
+    - assets/guide/health/hospital/aman.png
+    - assets/guide/health/hospital/elfath.png
+    - assets/guide/health/hospital/elhadii.png
+    - assets/guide/health/hospital/elnasr.png
+    - assets/guide/health/hospital/ltaqwa.png
+    - assets/guide/health/hospital/helwan_el3am.png
+    - assets/guide/health/hospital/hoda.png
+    - assets/guide/health/hospital/set-5adra.png
+
+
+    - assets/guide/malls/clothes_fashion/child/child.jpg
+    - assets/guide/malls/clothes_fashion/make-Up/make-Up.jpg
+    - assets/guide/malls/clothes_fashion/men/men.jpg
+    - assets/guide/malls/clothes_fashion/women/women.jpg
+
+    - assets/guide/malls/clothes_fashion/store.jpg
+    - assets/guide/malls/shops/shops.jpg
+    - assets/guide/malls/malls/mall.jpg
+
+    - assets/guide/malls/clothes_fashion/child/Baby_berry.png
+    - assets/guide/malls/clothes_fashion/child/Baby_Shop.png
+    - assets/guide/malls/clothes_fashion/child/Joy_Kids.png
+    - assets/guide/malls/clothes_fashion/child/Kiddieland.png
+    - assets/guide/malls/clothes_fashion/child/Kids_Club_Brand_Stock.png
+    - assets/guide/malls/clothes_fashion/child/bubbly.png
+    - assets/guide/malls/clothes_fashion/child/puzzle.png
+    - assets/guide/malls/clothes_fashion/child/junior.png
+    - assets/guide/malls/clothes_fashion/child/omar.png
+
+    - assets/guide/malls/clothes_fashion/make-Up/jas.png
+    - assets/guide/malls/clothes_fashion/make-Up/rose.png
+    - assets/guide/malls/clothes_fashion/make-Up/salah_kamel.png
+
+    - assets/guide/malls/clothes_fashion/men/bellini.png
+    - assets/guide/malls/clothes_fashion/men/golden_man.png
+    - assets/guide/malls/clothes_fashion/men/sutra.png
+    - assets/guide/malls/clothes_fashion/men/tie_house.png
+    - assets/guide/malls/clothes_fashion/men/x-box.png
+    - assets/guide/malls/clothes_fashion/men/xxl_twelve.png
+
+    - assets/guide/malls/clothes_fashion/women/arkedia.png
+    - assets/guide/malls/clothes_fashion/women/carina.png
+    - assets/guide/malls/clothes_fashion/women/hegazi.png
+    - assets/guide/malls/clothes_fashion/women/jesica.png
+    - assets/guide/malls/clothes_fashion/women/kilo.png
+    - assets/guide/malls/clothes_fashion/women/shewan.png
+    - assets/guide/malls/clothes_fashion/women/woman_clup.png
+    - assets/guide/malls/clothes_fashion/women/om_maleka.png
+
+
+    - assets/guide/malls/shops/el_brka.png
+    - assets/guide/malls/shops/felo.png
+
+
+    - assets/guide/malls/malls/abi_hamada.png
+    - assets/guide/malls/malls/abnaa_elsharqya.png
+    - assets/guide/malls/malls/b-tech.png
+    - assets/guide/malls/malls/dahab.png
+    - assets/guide/malls/malls/darak.png
+    - assets/guide/malls/malls/elshref.png
+    - assets/guide/malls/malls/fresh.png
+    - assets/guide/malls/malls/gamal_goneam.png
+    - assets/guide/malls/malls/moll_elkasr.png
+    - assets/guide/malls/malls/raya.png
+    - assets/guide/malls/malls/sfa_moll.png
+    - assets/guide/malls/malls/shahen.png
+    - assets/guide/malls/malls/zahran_tefal.png
+    - assets/guide/malls/malls/rezk.png
+    - assets/guide/malls/malls/rnen.png
+
+    - assets/guide/education/centers/centers.jpg
+    - assets/guide/education/nurseries/nurseries.jpg
+    - assets/guide/education/schools/schools.jpg
+
+    - assets/guide/cars/driving_education.png
+    - assets/guide/cars/sale.jpg
+    - assets/guide/cars/rent.jpg
+    - assets/guide/cars/maintenance.jpg
+
+
+
+
+
+
+
+    
+
+     
+
+  # To add assets to your application, add an assets section, like this:
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/assets-and-images/#from-packages
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages
